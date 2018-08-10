@@ -1,0 +1,42 @@
+﻿@model EmpresaWRWeb.ViewModels.EnterpriseVM
+@{
+    ViewData["Title"] = "Editar empresa";
+}
+
+<h2>Editar empresa</h2>
+
+<form asp-controller="Empresas" asp-action="Editar" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="City"></label>
+        <input asp-for="City" />
+        <span asp-validation-for="City"></span>
+    </div>
+
+    <div>
+        <label asp-for="Address"></label>
+        <input asp-for="Address" />
+        <span asp-validation-for="Address"></span>
+    </div>
+
+    <div>
+        <label asp-for="StaffNumber"></label>
+        <input asp-for="StaffNumber" />
+        <span asp-validation-for="StaffNumber"></span>
+    </div>
+
+    <div>
+        <label asp-for="AnualProfit"></label>
+        <input asp-for="AnualProfit" />
+        <span asp-validation-for="AnualProfit"></span>
+    </div>
+
+    <input type="submit" class="btn btn-info" value="Salvar" />
+</form>
+

@@ -1,0 +1,12 @@
+﻿@model EmpresaWRWeb.ViewModels.EnterpriseVM
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h2>Deletar @Model.Name</h2>
+<p>Tem certeza que deseja deletar a empresa @Model.Name?</p>
+<form asp-controller="Empresas" asp-action="Deletar" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" class="btn btn-danger" value="Sim" />
+    <a href="@Url.Action("Index", "Empresas")" class="btn btn-default">Não</a>
+</form>

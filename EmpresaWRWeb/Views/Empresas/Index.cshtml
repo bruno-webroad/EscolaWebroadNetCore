@@ -1,0 +1,43 @@
+﻿@model List<EmpresaWRWeb.ViewModels.EnterpriseVM>
+
+@{
+    Layout = "";
+    ViewData["Title"] = "Index";
+}
+
+<h2>Empresas cadastradas</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cidade</th>
+                <th>Endereço</th>
+                <th>Número de funcionários</th>
+                <th>Lucro anual</th>
+                <th> - </th>
+                <th> - </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var enterprise in Model)
+            {
+            <tr>
+                <td>@enterprise.Name</td>
+                <td>@enterprise.City</td>
+                <td>@enterprise.Address</td>
+                <td>@enterprise.StaffNumber</td>
+                <td>@enterprise.AnualProfit</td>
+                <td><a href="@Url.Action("Editar", "Empresas", new { id = enterprise.Id})">Editar</a></td>
+                <td><a href="@Url.Action("Deletar", "Empresas", new { id = enterprise.Id})">Deletar</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não existem empresas cadastradas.</p>
+}
